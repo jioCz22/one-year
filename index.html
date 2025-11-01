@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Manifest para PWA -->
+<link rel="manifest" href="manifest.json">
+
+<!-- Icono para iOS (PWA en iPhone/iPad) -->
+<link rel="apple-touch-icon" sizes="180x180" href="ico/heart.png">
+<!-- Favicon para navegadores de escritorio -->
+<link rel="icon" type="image/png" sizes="32x32" href="ico/heart.png">
+<link rel="icon" type="image/png" sizes="16x16" href="ico/heart.png">
+<!-- Favicon general (backup) -->
+<link rel="icon" href="ico/heart.png" type="image/png">
+<!-- Tema para la barra de estado -->
+<meta name="theme-color" content="#ff3366">
+<!-- Metadatos básicos -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Título -->
+<title>App Pala mi niña</title>
+<!-- Tipografía -->
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+<!-- Estilos -->
+<link rel="stylesheet" href="style.css">
+<!-- Animaciones AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+</head>
+<body>
+    
+    <div id="bubbles-media"></div>
+    <div id="bubbles-text"></div>
+
+  <div class="container">
+    <h1>💖 Nuestro Amor 💖</h1>
+
+    <div class="counter">
+      <h2>Días desde que nos conocimos:</h2>
+      <p id="main-count"></p>
+    </div>
+
+    <div class="milestones">
+      <h2>Hitos importantes:</h2>
+      <ul id="milestones-list"></ul>
+    </div>
+    <div class="next-milestone">
+  <h2>Próximo Hito:</h2>
+  <p id="next-countdown"></p>
+  
+</div>
+<div id="milestone-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeMilestoneModal()">&times;</span>
+    <h3 id="milestone-title"></h3>
+    <p id="milestone-date"></p>
+    <p id="milestone-info"></p>
+    <p id="milestone-description"></p> <!-- aquí va lo detallado -->
+  </div>
+</div>
+    <div class="gallery-section">
+        <!-- Modal para imagen ampliada -->
+<h2>Nuestros recuerdos 📸</h2>
+<div class="gallery">
+    <div class="photo" onclick="openModal('img/tunombre.mp4', 'Tu Nombre Es?')">
+  <video class="memory-video" src="img/tunombre.mp4" preload="metadata" muted></video>
+  <p class="description">Tu Nombre Es ?</p>
+</div>
+
+  <div class="photo" onclick="openModal('img/11-25-25.png', '11-25-25')">
+    <img src="img/11-25-25.png" alt="Recuerdo 1">
+    <p class="description">25-11-25</p>
+  </div>
+  <div class="photo" onclick="openModal('img/mibb.png', 'mi niña chiquita')">
+    <img src="img/mibb.png" alt="Recuerdo 2">
+    <p class="description">mi niña chiquita </p>
+  </div>
+    <div class="photo" onclick="openModal('img/miwapa.png', 'mi pincesa hermosaaaaaaaaaa')">
+    <img src="img/miwapa.png" alt="Recuerdo 2">
+    <p class="description"> mi pincesa hermosaaaaaaaaaa</p>
+  </div>
+<div class="photo" onclick="openModal('img/milokita.mp4', '1añitoooo de novios')">
+  <video class="memory-video" src="img/milokita.mp4" preload="metadata" muted></video>
+  <p class="description"> 1añitoooo de novios</p>
+</div>
+<div class="photo" onclick="openModal('img/1añito.mp4', '1añito de novios')">
+  <video class="memory-video" src="img/1añito.mp4" preload="metadata" muted></video>
+  <p class="description"> 1añito de novios</p>
+</div>
+<div class="photo" onclick="openModal('img/caritaaaaaaap.mp4', '')">
+<video class="memory-video" src="img/caritaaaaaaap.mp4" preload="metadata" muted></video>
+  <p class="description">Su caritaaaaa 😍</p>
+</div>
+  <div class="photo" onclick="openModal('img/mia.mp4', '')">
+  <video class="memory-video" src="img/mia.mp4" preload="metadata" muted></video>
+  <p class="description">mia mia</p>
+</div>
+  <div class="photo" onclick="openModal('img/lentecitos.jpg', 'mi niña pechocha')">
+    <img src="img/lentecitos.jpg" alt="Recuerdo 2">
+    <p class="description">mi niña pechocha </p>
+  </div>
+    <div class="photo" onclick="openModal('img/babanita.jpg', 'mi niña bananita')">
+    <img src="img/babanita.jpg" alt="Recuerdo 2">
+    <p class="description">my bananita</p>
+  </div>
+  <div class="photo" onclick="openModal('img/regalo.mp4', 'regalito')">
+  <video class="memory-video" src="img/regalo.mp4" preload="metadata" muted></video>
+  <p class="description">mi regalito</p>
+</div>
+
+
+</div>
+
+<button onclick=" shareCounter()" class="add-btn">📤 Compartir</button>
+
+
+
+<div id="modal" class="modal" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()"></div>
+  <div id="modal-caption" class="caption"></div>
+  <span class="modal-close" onclick="closeModal()">&times;</span>
+</div>
+
+<div class="theme-toggle-wrapper">
+  <button id="theme-toggle" class="theme-toggle">
+    <span class="icon">🌙</span>
+    <span class="label">Modo oscuro</span>
+  </button>
+</div>
+</div>
+  </div>
+  <br>
+  <br>
+<footer>
+  <span>Creado por - 
+    <a href="https://www.instagram.com/stories/highlights/17915692614174862/">Jioo Cz</a>
+  </span>
+</footer>
+
+  <script src="app.js" defer></script>
+  <script src="img.js"></script>
+  <script src="frases.js"></script>
+ 
+
+</body>
+</html>
